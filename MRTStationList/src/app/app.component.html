@@ -1,0 +1,47 @@
+<form (ngSubmit)="addMessage()">
+  <p>
+    嚙踝蕭嚙質??璇改蕭嚙?
+    <input type="text" name="name" [(ngModel)]="name" />
+  </p>
+
+  <p>
+    嚙踝蕭??寞?????嚙?
+    <input type="text" name="content" [(ngModel)]="content" />
+  </p>
+
+  <p>
+    <button type="submit">嚙踝蕭???嚙踝蕭嚙踝蕭嚙賡?殷蕭</button>
+  </p>
+</form>
+
+<!-- 嚙踝蕭嚙? ng-container ???嚙賡??皜賂蕭嚙賣????對蕭嚙踝蕭嚙踝蕭??穿蕭??選蕭??哨蕭嚙踝蕭嚙踝蕭嚙踝蕭???嚙賣????荔蕭嚙? -->
+<ng-container *ngFor="let message of messages">
+  <p>嚙踝蕭嚙賡?殷蕭??剔飭嚙踝蕭 {{ message.name }}</p>
+
+  <p>??殷蕭嚙踝蕭??穿蕭??寞?????嚙? {{ message.content }}</p>
+
+  <p>
+    嚙踝蕭嚙踝蕭嚙踝蕭???嚙? {{ message.date | date: "yyyy/MM/dd HH:mm:ss" }}
+  </p>
+</ng-container>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>
+        嚙踝蕭嚙賡??嚙踝蕭嚙質??嚙賭漱嚙踝蕭嚙踝蕭???嚙踝蕭??∴蕭???嚙質?∴蕭嚙踝蕭嚙?
+      </th>
+      <th>??蛛蕭???嚙踝蕭嚙賣??嚙踝蕭嚙踝蕭嚙?</th>
+      <th>???嚙踝蕭嚙踝蕭嚙踝蕭皝?嚙賢?喉蕭鈭歹蕭嚙?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of list; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.Station }}</td>
+      <td>{{ item.Destination }}</td>
+      <td>{{ item.UpdateTime | date: "yyyy-MM-dd HH:mm:ss" }}</td>
+    </tr>
+  </tbody>
+</table>
